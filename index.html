@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Zach Gulick · Projects</title>
+<meta name="description" content="Data products and automations built by Zach Gulick, a product manager in Dublin: HypeTorch, Mandatory Timeout, RareLanguages and ProofTimeline.">
+<meta property="og:title" content="Zach Gulick · Things I've built">
+<meta property="og:description" content="Data products and automations: what each one is, the problem it solves, how it works and how I built it.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314161A'/%3E%3Ctext x='16' y='21.5' font-family='Arial,sans-serif' font-size='14' font-weight='800' fill='%23fff' text-anchor='middle'%3EZG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">Zach Gulick</a>
+    <nav class="links" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#automations">Automations</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <main id="view-home" class="view">
+    <section class="intro" id="top">
+      <h1>Things I've built.</h1>
+      <p>Product manager in Dublin. On the side I build data products and automations. Each one below covers what it is, the problem it solves, how it works and how I built it.</p>
+    </section>
+
+    <section class="list">
+      <article class="feature">
+        <div>
+          <h2>HypeTorch</h2>
+          <p class="what">Combines podcast mentions and talk time with Wikipedia views, Google News and Google Trends into one influence score, JORDN. Two companion scores, RODMN and PIPN, build on it to measure sentiment and popularity relative to social media reach.</p>
+          <div class="block"><div class="label">Problem</div><p>Influence is still measured with old-school counts: impressions, likes, follows. Those show reach, not how much people actually care about someone.</p></div>
+          <div class="block"><div class="label">How it works</div><p class="flow">Podcasts + Wikipedia + Google News + Trends → weekly pipeline → JORDN · RODMN · PIPN → REST API</p></div>
+          <div class="btns">
+            <a class="btn solid" href="https://hypetorch.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+            <a class="btn" href="#hypetorch">Full write-up →</a>
+          </div>
+        </div>
+        <div>
+          <a class="shot a" href="https://hypetorch.vercel.app" target="_blank" rel="noopener"><img src="img/hypetorch.jpg" alt="HypeTorch home page: Moneyball for off-court performance" width="1440" height="900" loading="lazy"></a>
+          <dl class="facts">
+            <div><dt class="label">Status</dt><dd>Live</dd></div>
+            <div><dt class="label">Role</dt><dd>Solo</dd></div>
+            <div><dt class="label">Stack</dt><dd>Python · FastAPI · Postgres</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div>
+          <h2>Mandatory Timeout</h2>
+          <p class="what">Every WNBA story, video and podcast in one feed, pulled from 45 sources, tagged by player and team, with HypeTorch influence scores built in.</p>
+          <div class="block"><div class="label">Problem</div><p>The WNBA is exploding, but newsrooms haven't caught up. Most outlets have two or three WNBA writers at most, so fans end up following 20 different sites, podcasts and channels.</p></div>
+          <div class="block"><div class="label">How it works</div><p class="flow">45 sources → tag by player/team → one feed + HypeTorch scores</p></div>
+          <div class="btns">
+            <a class="btn solid" href="https://www.mandatorytimeout.com" target="_blank" rel="noopener">Live site ↗</a>
+            <a class="btn" href="#mandatory-timeout">Full write-up →</a>
+          </div>
+        </div>
+        <div>
+          <a class="shot b" href="https://www.mandatorytimeout.com" target="_blank" rel="noopener"><img src="img/mandatory-timeout.jpg" alt="Mandatory Timeout front page with today's WNBA stories and the Heat Check leaderboard" width="1440" height="900" loading="lazy"></a>
+          <dl class="facts">
+            <div><dt class="label">Status</dt><dd>Live</dd></div>
+            <div><dt class="label">Role</dt><dd>Solo</dd></div>
+            <div><dt class="label">Stack</dt><dd>Next.js · Postgres · Vercel</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <h2 id="products" class="label group-h">Products</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>RareLanguages</h3>
+          <p class="what">An app for learning Gheg Albanian, the dialect spoken in Kosovo, with AI-generated lessons and translations.</p>
+          <p class="prob"><span class="label">Problem </span>My wife's family speaks Gheg, but every online Albanian course teaches Tosk. So I built my own.</p>
+          <p class="flow">Lesson topic → OpenAI lesson + Gheg translations → validated → in-app lesson</p>
+          <p class="meta">Live · Solo · Next.js · Postgres · OpenAI API</p>
+          <div class="actions"><a href="https://rarelanguages.vercel.app" target="_blank" rel="noopener">Live site ↗</a><a href="#rarelanguages">Write-up →</a></div>
+        </article>
+        <article class="card">
+          <h3>ProofTimeline</h3>
+          <p class="what">Turns piles of unstructured documents into a timeline of key events, using semantic search.</p>
+          <p class="prob"><span class="label">Problem </span>Law firms, consultancies and other regulated industries spend hours combing documents for key facts and dates.</p>
+          <p class="flow">Documents → semantic search → key events → timeline</p>
+          <p class="meta">Private beta · Solo · Next.js · MongoDB Vector Search · GPT-4o</p>
+          <div class="actions"><a href="#prooftimeline">Write-up →</a></div>
+        </article>
+      </div>
+
+      <h2 id="automations" class="label group-h">Automations</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Weekly family meal planner</h3>
+          <p class="what">Takes a baby-weaning menu and does all the prep: finds the recipes, builds a step-by-step cooking plan covering baby and adult meals, and fills the Tesco basket.</p>
+          <p class="prob"><span class="label">Problem </span>Starting my son on solids meant cooking two sets of meals. Planning took hours, and batch cooking ate whole weekends.</p>
+          <p class="flow">Weaning menu → recipes → step-by-step plan (baby + adult) → Tesco basket</p>
+          <p class="meta">Runs weekly · Solo</p>
+        </article>
+        <article class="card">
+          <h3>Dog-Ear</h3>
+          <p class="what">My own read-it-later service. Bookmark an article, it gets an AI summary, and a weekly email rounds them up so I can mark them read.</p>
+          <p class="prob"><span class="label">Problem </span>Pocket shut down and left me with no good way to save articles for later.</p>
+          <p class="flow">Bookmark → AI summary → Google Sheet → weekly digest email → mark as read</p>
+          <p class="meta">In use · Solo · n8n · Google Sheets</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- HYPETORCH WRITE-UP -->
+  <main id="view-hypetorch" class="view" hidden>
+    <div style="padding-top:28px"><a class="back" href="#top">← All projects</a></div>
+    <section class="wu-head">
+      <div class="pills"><span class="pill live">Live</span><span class="pill">Data product</span></div>
+      <h1>HypeTorch</h1>
+      <p class="lede">Influence scores for athletes and public figures that go beyond likes and follows.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://hypetorch.vercel.app" target="_blank" rel="noopener">Visit live site ↗</a>
+      </div>
+    </section>
+
+    <section class="metastrip" aria-label="Project facts">
+      <div><div class="label">Role</div><div class="v">Solo: product, design, build</div></div>
+      <div><div class="label">Timeline</div><div class="v">Feb 2025 to present</div></div>
+      <div><div class="label">Stack</div><div class="v">Python · FastAPI · Postgres · Next.js</div></div>
+      <div><div class="label">Built with</div><div class="v">Claude Code</div></div>
+    </section>
+
+    <div class="shot a hero-shot"><img src="img/hypetorch.jpg" alt="HypeTorch home page" width="1440" height="900" loading="lazy"></div>
+
+    <section class="two">
+      <div><h2>The problem</h2><p>Influence is still measured with old-school counts: impressions, likes, follows. Those show reach, not how much people actually talk about and care about someone.</p></div>
+      <div><h2>What I built</h2><p>A weekly pipeline that combines podcast mentions and talk time with Wikipedia views, Google News and Google Trends into a JORDN influence score. RODMN and PIPN build on it to measure sentiment and popularity relative to social media reach. Results are stored in Postgres and served through a versioned REST API, which also powers Mandatory Timeout. It started with the WNBA; a hospitality vertical followed in 2026.</p></div>
+    </section>
+
+    <section class="arch">
+      <h2>How it works</h2>
+      <div class="diagram-box">
+        <div class="diagram" role="img" aria-label="Podcast transcripts and web signals feed a context classifier and a weekly scoring pipeline, stored in Postgres, served by a versioned REST API to Mandatory Timeout, the HypeTorch dashboard and a planned AWS Data Exchange listing">
+          <div class="node"><span class="label">Sources</span><b>Podcasts · YouTube</b><b>Wikipedia · News · Trends</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Context</span><b>BART · embeddings</b><b>rules · GPT</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Weekly scoring</span><b>JORDN → RODMN · PIPN</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Store</span><b>Postgres</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node key"><span class="label">Serve</span><b>Versioned REST API</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="stack">
+            <div class="node">Mandatory Timeout</div>
+            <div class="node">HypeTorch dashboard</div>
+            <div class="node planned">AWS Data Exchange (planned)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div><h2>Key decisions</h2><ul>
+        <li><strong>Evaluation harness first.</strong> Before tuning anything I built a harness to set the quality bar and catch regressions when prompts or models change.</li>
+        <li><strong>An ensemble, not one model.</strong> Deciding what a mention is about uses four signals (zero-shot BART, sentence embeddings, linguistic rules and GPT), with confidence scores and quality gates on the output.</li>
+        <li><strong>No manual step.</strong> GitHub Actions ingests, scores and publishes every Sunday, unattended.</li>
+        <li><strong>API first.</strong> Versioned endpoints plus a partner API with keys, rate limits and tenant isolation, so Mandatory Timeout consumes scores the same way an outside customer would.</li>
+      </ul></div>
+      <div><h2>What's next</h2><ul><li>API Gateway integration</li><li>Public data dictionary</li><li>Data provenance policy</li></ul></div>
+    </section>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px">
+      <a class="back" href="#top">← All projects</a>
+      <a class="back" href="#mandatory-timeout">Next: Mandatory Timeout →</a>
+    </div>
+  </main>
+
+  <!-- MANDATORY TIMEOUT WRITE-UP -->
+  <main id="view-mandatory-timeout" class="view" hidden>
+    <div style="padding-top:28px"><a class="back" href="#top">← All projects</a></div>
+    <section class="wu-head">
+      <div class="pills"><span class="pill live">Live</span><span class="pill">Media product</span></div>
+      <h1>Mandatory Timeout</h1>
+      <p class="lede">Every WNBA story, video and podcast in one feed, with HypeTorch's first live integration built in.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://www.mandatorytimeout.com" target="_blank" rel="noopener">Visit live site ↗</a>
+      </div>
+    </section>
+
+    <section class="metastrip" aria-label="Project facts">
+      <div><div class="label">Role</div><div class="v">Solo: product, design, build</div></div>
+      <div><div class="label">Timeline</div><div class="v">Apr 2026 to present</div></div>
+      <div><div class="label">Stack</div><div class="v">Next.js · TypeScript · Drizzle · Postgres</div></div>
+      <div><div class="label">Built with</div><div class="v">Claude Code</div></div>
+    </section>
+
+    <div class="shot b hero-shot"><img src="img/mandatory-timeout.jpg" alt="Mandatory Timeout front page" width="1440" height="900" loading="lazy"></div>
+
+    <section class="two">
+      <div><h2>The problem</h2><p>The WNBA is exploding, but newsrooms haven't caught up. Most outlets have two or three WNBA writers at most, so fans end up following 20 different sites, podcasts and channels to keep up.</p></div>
+      <div><h2>What I built</h2><p>The Wire pulls articles, podcasts and YouTube videos from 45 sources (17 outlets, 9 podcasts and 19 channels) into one newest-first feed. Every item is tagged by player and team and links straight back to the publisher. Heat Check shows each player's weekly JORDN and PIPN scores from the HypeTorch partner API, and player pages bring the scores and the coverage together.</p></div>
+    </section>
+
+    <section class="arch">
+      <h2>How it works</h2>
+      <div class="diagram-box">
+        <div class="diagram" role="img" aria-label="45 RSS, podcast and YouTube sources are ingested by GitHub Actions, tagged by player and team, stored in Postgres and served by a Next.js site on Vercel; HypeTorch scores sync in weekly">
+          <div class="node"><span class="label">Sources</span><b>17 outlets · 9 podcasts</b><b>19 YouTube channels</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Ingest</span><b>GitHub Actions</b><b>RSS every 30 min</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Tag</span><b>Player · team</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="stack">
+            <div class="node"><span class="label">Store</span><b>Postgres (Drizzle)</b></div>
+            <div class="node"><span class="label">Weekly sync</span><b>HypeTorch API</b></div>
+          </div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node key"><span class="label">Serve</span><b>Next.js on Vercel</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="stack">
+            <div class="node">The Wire</div>
+            <div class="node">Heat Check</div>
+            <div class="node">Player pages</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div><h2>Key decisions</h2><ul>
+        <li><strong>Accurate tags over more tags.</strong> Team nicknames are everyday words (Dream, Sky, Sun), and early tagging was about 45% wrong: the alias "AT" alone tagged 2,364 items as Alyssa Thomas when 41 were about her. Short aliases now match case-sensitively, and a city name never counts on its own.</li>
+        <li><strong>Ingestion off Vercel Cron.</strong> A full RSS pass takes about 10 minutes, far over the 60-second function limit. It now runs on GitHub Actions: RSS every 30 minutes, YouTube daily to stay inside the API quota.</li>
+        <li><strong>A front page no single source can take over.</strong> Team channels post in bursts. The front page caps each source and content type while keeping date order, and relaxes the caps in a set order when it runs short.</li>
+        <li><strong>Syncs that check themselves.</strong> The weekly HypeTorch sync fails if more than 10% of players can't be matched, then re-checks every stored score against the API. A separate CI check compares the schema against the live database.</li>
+      </ul></div>
+      <div><h2>What's next</h2><ul><li>Stats layer: box scores and season stats (pipeline built, not yet live)</li><li>Natural-language questions over stats and coverage</li></ul></div>
+    </section>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px">
+      <a class="back" href="#top">← All projects</a>
+      <a class="back" href="#rarelanguages">Next: RareLanguages →</a>
+    </div>
+  </main>
+
+  <!-- RARELANGUAGES WRITE-UP -->
+  <main id="view-rarelanguages" class="view" hidden>
+    <div style="padding-top:28px"><a class="back" href="#top">← All projects</a></div>
+    <section class="wu-head">
+      <div class="pills"><span class="pill live">Live</span><span class="pill">Learning app</span></div>
+      <h1>RareLanguages</h1>
+      <p class="lede">Learn Gheg Albanian, the dialect that every Albanian course skips.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://rarelanguages.vercel.app" target="_blank" rel="noopener">Visit live site ↗</a>
+      </div>
+    </section>
+
+    <section class="metastrip" aria-label="Project facts">
+      <div><div class="label">Role</div><div class="v">Solo: product, design, build</div></div>
+      <div><div class="label">Timeline</div><div class="v">2025</div></div>
+      <div><div class="label">Stack</div><div class="v">Next.js · TypeScript · Postgres · OpenAI</div></div>
+      <div><div class="label">Built with</div><div class="v">Claude Code</div></div>
+    </section>
+
+    <div class="shot a hero-shot"><img src="img/rarelanguages.jpg" alt="RareLanguages home page" width="1440" height="900" loading="lazy"></div>
+
+    <section class="two">
+      <div><h2>The problem</h2><p>My wife's family speaks Gheg, the Albanian dialect spoken in Kosovo. Every online Albanian course teaches Tosk, the standard dialect, and big platforms don't cover languages this small at all.</p></div>
+      <div><h2>What I built</h2><p>A course for Gheg made of skill units and lessons: vocabulary, dialogue, grammar, pronunciation and exercises. The content comes from an offline pipeline that prompts OpenAI for each lesson, validates what comes back and loads it into Postgres. The site itself is read-only, so no AI call happens while someone is learning. It went from a fuzzy idea to a working product in weeks.</p></div>
+    </section>
+
+    <section class="arch">
+      <h2>How it works</h2>
+      <div class="diagram-box">
+        <div class="diagram" role="img" aria-label="Lesson topics go through an offline OpenAI generation pipeline, are validated, stored in Postgres and served by a read-only Next.js app">
+          <div class="node"><span class="label">Input</span><b>Lesson topic</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Generate (offline)</span><b>OpenAI</b><b>vocab · dialogue · grammar</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Check</span><b>Validate</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Store</span><b>Postgres</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node key"><span class="label">Serve</span><b>Read-only Next.js app</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div><h2>Key decisions</h2><ul>
+        <li><strong>Generate offline, not live.</strong> Lessons are produced and checked before anyone sees them, which keeps quality reviewable, pages fast and running costs near zero.</li>
+        <li><strong>Read-only by design.</strong> The API only has GET routes, and a test fails the build if a write route appears.</li>
+        <li><strong>Reusable skills.</strong> Skills link to courses through a join table, so one unit can appear at several levels without duplicate content.</li>
+        <li><strong>Only show what's ready.</strong> Languages switch on only when they have lessons.</li>
+      </ul></div>
+      <div><h2>What's next</h2><ul><li>Welsh and Croatian: set up in the database, waiting on lesson content</li></ul></div>
+    </section>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px">
+      <a class="back" href="#top">← All projects</a>
+      <a class="back" href="#prooftimeline">Next: ProofTimeline →</a>
+    </div>
+  </main>
+
+  <!-- PROOFTIMELINE WRITE-UP -->
+  <main id="view-prooftimeline" class="view" hidden>
+    <div style="padding-top:28px"><a class="back" href="#top">← All projects</a></div>
+    <section class="wu-head">
+      <div class="pills"><span class="pill">Private beta</span><span class="pill">Document AI</span></div>
+      <h1>ProofTimeline</h1>
+      <p class="lede">Turns a pile of messy documents into a timeline of what happened and when, with every event traced back to its source.</p>
+      <div class="btns">
+        <a class="btn solid" href="mailto:zgulick@gmail.com?subject=ProofTimeline%20demo">Demo on request</a>
+      </div>
+    </section>
+
+    <section class="metastrip" aria-label="Project facts">
+      <div><div class="label">Role</div><div class="v">Product, design, build</div></div>
+      <div><div class="label">Timeline</div><div class="v">2026</div></div>
+      <div><div class="label">Stack</div><div class="v">Next.js · MongoDB Atlas · VoyageAI · GPT-4o</div></div>
+      <div><div class="label">Built with</div><div class="v">Claude Code</div></div>
+    </section>
+
+    <section class="two">
+      <div><h2>The problem</h2><p>Law firms, consultancies and other regulated industries spend hours combing documents for key facts and dates. When two documents disagree about when something happened, someone has to notice.</p></div>
+      <div><h2>What I built</h2><p>Upload 10 to 50 documents (PDFs, Word files, CSVs, social media exports). ProofTimeline stores, converts and indexes them in the background. One click on "Analyse" pulls out dated events, assembles them into a timeline and flags gaps and contradictions. Every event links back to the document and page it came from. The rule is "extract, don't interpret": it never scores or gives a verdict, so people make the judgement.</p></div>
+    </section>
+
+    <section class="arch">
+      <h2>How it works</h2>
+      <div class="diagram-box">
+        <div class="diagram" role="img" aria-label="Documents are stored with SHA-256 integrity checks, converted and embedded for vector search, events are extracted with GPT-4o and assembled into a timeline with gaps and contradictions, then reviewed and exported">
+          <div class="node"><span class="label">Upload</span><b>PDF · DOCX · CSV</b><b>social exports</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Ingest</span><b>R2 storage · SHA-256</b><b>to Markdown</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Index</span><b>VoyageAI embeddings</b><b>Atlas Vector Search</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><span class="label">Extract</span><b>GPT-4o events</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="node key"><span class="label">Assemble</span><b>Timeline</b><b>gaps · contradictions</b></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="stack">
+            <div class="node">Review &amp; edit</div>
+            <div class="node">PDF report</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two">
+      <div><h2>Built on DocVault</h2><p>ProofTimeline runs on DocVault, a platform I built so several document products could share one backend. A shared core handles sign-in and multi-tenant organisations, file storage with integrity checks, vector search and the extraction engine; a shared UI kit keeps the apps consistent. The same core powers ScreenR, a due-diligence tool for private equity, and RFP Reader.</p></div>
+      <div><h2>One app, several industries</h2><p>Configuration rather than separate code adapts ProofTimeline to immigration law, construction, franchise monitoring and general chronology. Each industry gets its own terminology, extraction schemas and features.</p></div>
+    </section>
+
+    <section class="two">
+      <div><h2>Key decisions</h2><ul>
+        <li><strong>Analyse on demand, not per upload.</strong> Files are processed as they arrive, but events are only extracted when the whole set is in, so the timeline sees everything at once.</li>
+        <li><strong>Two extraction modes.</strong> Short documents go straight to the model. Long ones go through vector search first, so only the relevant passages are sent.</li>
+        <li><strong>Same documents, same timeline.</strong> Early runs gave different timelines for identical inputs. Fixed with temperature 0, a fixed seed and a stable document order.</li>
+        <li><strong>Tamper-evident evidence.</strong> Every document joins a SHA-256 hash chain that records upload order and chain of custody.</li>
+      </ul></div>
+      <div><h2>What's next</h2><ul><li>Candidate portal: an outside party uploads their own documents, with social media exports filtered in the browser so private messages never leave their device</li><li>Drone flight data as a timeline source (designed)</li></ul></div>
+    </section>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px">
+      <a class="back" href="#top">← All projects</a>
+      <a class="back" href="#hypetorch">Next: HypeTorch →</a>
+    </div>
+  </main>
+
+  <footer class="bottom" id="contact">
+    <p>Zach Gulick · Dublin</p>
+    <div class="f"><a href="mailto:zgulick@gmail.com">zgulick@gmail.com</a><a href="https://github.com/zgulick" target="_blank" rel="noopener">GitHub ↗</a></div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
