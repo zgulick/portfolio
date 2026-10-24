@@ -144,25 +144,13 @@
 
     <section class="arch">
       <h2>How it works</h2>
-      <div class="diagram-box">
-        <div class="diagram" role="img" aria-label="Podcast transcripts and web signals feed a context classifier and a weekly scoring pipeline, stored in Postgres, served by a versioned REST API to Mandatory Timeout, the HypeTorch dashboard and a planned AWS Data Exchange listing">
-          <div class="node"><span class="label">Sources</span><b>Podcasts · YouTube</b><b>Wikipedia · News · Trends</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Context</span><b>BART · embeddings</b><b>rules · GPT</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Weekly scoring</span><b>JORDN → RODMN · PIPN</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Store</span><b>Postgres</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node key"><span class="label">Serve</span><b>Versioned REST API</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="stack">
-            <div class="node">Mandatory Timeout</div>
-            <div class="node">HypeTorch dashboard</div>
-            <div class="node planned">AWS Data Exchange (planned)</div>
-          </div>
-        </div>
-      </div>
+      <ol class="steps">
+        <li class="step"><span class="label">Collect</span><b>Podcasts and web signals</b><p>Podcast and YouTube transcripts, plus Wikipedia views, Google News and Google Trends.</p></li>
+        <li class="step"><span class="label">Classify</span><b>What each mention is about</b><p>Four signals vote on the context: zero-shot BART, sentence embeddings, linguistic rules and GPT.</p></li>
+        <li class="step"><span class="label">Score</span><b>JORDN, RODMN, PIPN</b><p>Every week: JORDN for influence, then RODMN for sentiment and PIPN for popularity relative to social reach.</p></li>
+        <li class="step"><span class="label">Store</span><b>Postgres</b><p>Scores are kept week by week, so trends and history stay queryable.</p></li>
+        <li class="step key"><span class="label">Serve</span><b>Versioned REST API</b><p>Keyed and rate-limited. Powers the HypeTorch dashboard and Mandatory Timeout.</p></li>
+      </ol>
     </section>
 
     <section class="two">
@@ -209,28 +197,13 @@
 
     <section class="arch">
       <h2>How it works</h2>
-      <div class="diagram-box">
-        <div class="diagram" role="img" aria-label="45 RSS, podcast and YouTube sources are ingested by GitHub Actions, tagged by player and team, stored in Postgres and served by a Next.js site on Vercel; HypeTorch scores sync in weekly">
-          <div class="node"><span class="label">Sources</span><b>17 outlets · 9 podcasts</b><b>19 YouTube channels</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Ingest</span><b>GitHub Actions</b><b>RSS every 30 min</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Tag</span><b>Player · team</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="stack">
-            <div class="node"><span class="label">Store</span><b>Postgres (Drizzle)</b></div>
-            <div class="node"><span class="label">Weekly sync</span><b>HypeTorch API</b></div>
-          </div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node key"><span class="label">Serve</span><b>Next.js on Vercel</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="stack">
-            <div class="node">The Wire</div>
-            <div class="node">Heat Check</div>
-            <div class="node">Player pages</div>
-          </div>
-        </div>
-      </div>
+      <ol class="steps">
+        <li class="step"><span class="label">Collect</span><b>45 sources</b><p>17 news outlets, 9 podcasts and 19 YouTube channels.</p></li>
+        <li class="step"><span class="label">Ingest</span><b>GitHub Actions</b><p>RSS every 30 minutes, YouTube once a day to stay inside the API quota.</p></li>
+        <li class="step"><span class="label">Tag</span><b>Player and team</b><p>Each item is matched to the players and teams it mentions.</p></li>
+        <li class="step"><span class="label">Store</span><b>Postgres</b><p>Items and tags via Drizzle, plus HypeTorch scores synced in weekly.</p></li>
+        <li class="step key"><span class="label">Serve</span><b>Next.js on Vercel</b><p>The Wire, Heat Check and player pages.</p></li>
+      </ol>
     </section>
 
     <section class="two">
@@ -277,19 +250,13 @@
 
     <section class="arch">
       <h2>How it works</h2>
-      <div class="diagram-box">
-        <div class="diagram" role="img" aria-label="Lesson topics go through an offline OpenAI generation pipeline, are validated, stored in Postgres and served by a read-only Next.js app">
-          <div class="node"><span class="label">Input</span><b>Lesson topic</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Generate (offline)</span><b>OpenAI</b><b>vocab · dialogue · grammar</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Check</span><b>Validate</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Store</span><b>Postgres</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node key"><span class="label">Serve</span><b>Read-only Next.js app</b></div>
-        </div>
-      </div>
+      <ol class="steps">
+        <li class="step"><span class="label">Plan</span><b>Lesson topic</b><p>Each skill unit is broken into lesson topics.</p></li>
+        <li class="step"><span class="label">Generate</span><b>OpenAI, offline</b><p>Vocabulary, dialogue, grammar, pronunciation and exercises in Gheg.</p></li>
+        <li class="step"><span class="label">Check</span><b>Validate</b><p>Output is checked before it goes anywhere near a learner.</p></li>
+        <li class="step"><span class="label">Store</span><b>Postgres</b><p>Courses, skills and lessons, with skills shared across levels.</p></li>
+        <li class="step key"><span class="label">Serve</span><b>Read-only Next.js app</b><p>No AI calls while someone is learning.</p></li>
+      </ol>
     </section>
 
     <section class="two">
@@ -334,24 +301,13 @@
 
     <section class="arch">
       <h2>How it works</h2>
-      <div class="diagram-box">
-        <div class="diagram" role="img" aria-label="Documents are stored with SHA-256 integrity checks, converted and embedded for vector search, events are extracted with GPT-4o and assembled into a timeline with gaps and contradictions, then reviewed and exported">
-          <div class="node"><span class="label">Upload</span><b>PDF · DOCX · CSV</b><b>social exports</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Ingest</span><b>R2 storage · SHA-256</b><b>to Markdown</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Index</span><b>VoyageAI embeddings</b><b>Atlas Vector Search</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node"><span class="label">Extract</span><b>GPT-4o events</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="node key"><span class="label">Assemble</span><b>Timeline</b><b>gaps · contradictions</b></div>
-          <span class="arrow" aria-hidden="true">→</span>
-          <div class="stack">
-            <div class="node">Review &amp; edit</div>
-            <div class="node">PDF report</div>
-          </div>
-        </div>
-      </div>
+      <ol class="steps">
+        <li class="step"><span class="label">Upload</span><b>Documents</b><p>10 to 50 PDFs, Word files, CSVs or social media exports.</p></li>
+        <li class="step"><span class="label">Ingest</span><b>Store and index</b><p>Saved to R2 with a SHA-256 fingerprint, converted to text and embedded for vector search.</p></li>
+        <li class="step"><span class="label">Extract</span><b>Dated events</b><p>GPT-4o pulls out events. Long documents are narrowed by vector search first.</p></li>
+        <li class="step key"><span class="label">Assemble</span><b>Timeline</b><p>Gaps and contradictions flagged, every event linked to its source page.</p></li>
+        <li class="step"><span class="label">Review</span><b>Edit and export</b><p>Confirm, edit or delete events, then export a PDF report.</p></li>
+      </ol>
     </section>
 
     <section class="two">
